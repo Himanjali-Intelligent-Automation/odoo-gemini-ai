@@ -1,0 +1,38 @@
+<odoo>
+    <record id="gemini_res_config_settings_view" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.gemini.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Gemini" string="Gemini" name="gemini" logo="hia_gemini_ai_integration/static/description/icon.png">
+                    <block title="Gemini">
+                        <div class="col-xs-12 row o_settings_container o_gemini_gemini_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Gemini API Key</span>
+                                    <div class="content-group mt16">
+                                        <field name="gemini_api_key"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Gemini Model</span>
+                                    <div class="content-group mt16">
+                                        <field name="gemini_model_id"/>
+                                    </div>
+                                    <span class="o_form_label">Model Support</span>
+                                    <div class="content-group mt16">
+                                        <field name="model_support" readonly="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>
