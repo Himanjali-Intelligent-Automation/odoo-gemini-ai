@@ -5,8 +5,6 @@ from odoo import models, api,fields
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    def _get_default_gemini_model(self):
-        return self.env.ref('hia_gemini_ai_integration.gemini-pro-vision').id
 
     gemini_api_key = fields.Char(
         string="Gemini API key",
@@ -18,7 +16,6 @@ class ResConfigSettings(models.TransientModel):
         'gemini.model',
         'Gemini Model',
         ondelete='cascade',
-        default=_get_default_gemini_model,
         config_parameter="hia_gemini_ai_integration.gemini_model"
     )
     model_support = fields.Char(
